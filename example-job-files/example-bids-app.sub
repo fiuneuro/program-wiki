@@ -1,7 +1,7 @@
 #!/bin/bash
 #---Number of cores
-#BSUB -n 12
-#BSUB -R "span[ptile=12]"
+#BSUB -n 1
+#BSUB -R "span[ptile=1]"
 
 #---Job's name in LSF system
 #BSUB -J mriqc
@@ -36,6 +36,6 @@ PYTHONPATH=""
 
 # Run MRIQC and classifier
 singularity run new_poldracklab_mriqc_0.10.4-2018-03-23-8fb5f5e9184f.img \
-    $DSET_DIR ${DSET_DIR}/derivatives/mriqc participant --n_cpus 12 --fd_thres 0.2 \
+    $DSET_DIR ${DSET_DIR}/derivatives/mriqc participant --n_cpus 1 --fd_thres 0.2 \
     --no-sub --verbose-reports --ica --deoblique --correct-slice-timing \
     -w /scratch/tsalo006/work
