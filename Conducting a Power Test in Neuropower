@@ -1,0 +1,68 @@
+http://neuropowertools.org/neuropower/neuropowerstart/
+
+**In the OVERVIEW tab (above “Data location”, to the left of “START”) you can see the instructions to run the power analysis, 
+but here you'll have a few additional details, in case you get lost/have questions.
+
+1.Click Start
+  a.In “Data Location”, you have 1 of 3 options:
+      i.Choose the nifty file that contains your pilot dataset (this could come from AFNI, FSL, or any other nifty-file format)
+          1.If choosing this option, click on “Choose File” under “Upload”.
+              a.If uploaded successfully, you will see your file name next to “Choose File”. OR
+     ii.Upload the statistical map for that particular brain task. OR
+    iii.Copy the pilot dataset from an open database source, such as Neurovault
+  b.In “Mask location (optional)”
+      i.If you have a mask, or brain area you want to restrict your analysis to, upload the file here. This is a file you would have              in your computer. Make sure it’s in a nifty file. 
+          1.If you choose this option, click “Choose File” to upload your file.
+     ii.If you decide not to upload any masks, neuropower will take all the non-null voxels to calculate power. 
+  c.In “Design specifications”
+      i.“Are the data Z- or T-values?”
+          1.Whether the data are Z/T-values depends on the data you are going to use for your calculation.
+              a.Usually, your data type will be specified in your file name. 
+              b.But, for instance, if the data coming from the open database source is a Z map type, then you’d choose the Z-value. 
+                  i.You can always find the published paper to find the parameters you’d need. 
+      ii.“What is the screening threshold, also known as the clusterforming threshold or the excursion threshold (either p-value or z-           value units)?”
+          1.For p-values, usually 0.05 is used, but the threshold can vary depended on your research question and experiment design.
+          2.If you are retrieving your data from an open source, refer to the published study. 
+     iii."How many subjects does the group map represent?”
+          1.This is the number of subjects included in the pilot study.
+      iv.“Is this a one-sample or a two-sample test?”
+          1.Again, this depends on the nature of your experiment. 
+          2.If data coming from an open source, refer to the paper.
+       v.“At which alpha-level are the statistical tests carried out?”
+          1.In the majority of cases, the alpha level will be 0.05, but your research questions and design could modify this level                   (e.g., 0.01).
+          2.If data coming from an open source, refer to the publication. 
+      vi.“Do you want to manually specify the smoothness or estimate from the data?”
+          1.If you have the parameters for the smoothness and voxel size of your data in nm, you can use these measures. 
+              a.Select “Manual”
+              b.Add the parameters for smoothness and voxel size.
+          2.Although, they note estimating smoothness on statistical maps leads to biases, the degree of biases will depend on your                 ROIs and purposes underlying your power analysis. 
+  d.Click “Submit Parameters”
+2.“Viewer”
+  a.If you use data from an open source, such as neurovault, you may automatically be redirected to this section where you’ll be able       to see the brain Z-/T-map. 
+  b.You may also see this brain map if you uploaded a statistical map
+3.Click “Peak Table”
+  a.If you did not use a statistical map or an open source, you will not be directed to “Viewer” and instead to “Peak Table”. 
+  b.Peak table will show you the coordinates, peak values, and p-values for each peak Z or T value (depending on your data). It              basically retrieves each local maxima in the map.
+      i.Keep in mind that depending on the size of your data, this section may take a while to load. 
+4.Click “Model Fit”
+  a.This tab will basically show you whether your power analysis is valid or not, given the intention to find the alternative               distribution of peaks. This calculation is based on the mean, standard deviation of the alternative hypothesis, and the weights of       the null and alternative distribution of your data.
+      i.A good indication of whether you analysis is valid or not is whether the total distribution (blue) line and the alternative             distribution (red) line merge. 
+5.Click “Power Calculation”
+  a.You will first see the power curves. If you hover over them, you can see the estimates of power for different sample size.
+  b.If, on the other hand, you need a precise sample size given a specific power value, you should fill out the form underneath             “Power”
+      i.MCP* = Multiple Comparison Procedure
+          1.You will be prompted to choose from 1 of 3 MCPs: Random-Field Theory, Bonferroni, Benjamini-Hohchberg, and Uncorrected
+          2.This decision will be based on your design and method of analysis
+      ii.Sample Size
+          1.Leave this blank
+     iii.Power
+          1.The power percentage will depend on your design. 80% is the most common threshold used. 
+          2.Make sure to set the power in decimals, not in percentage (e.g., 0.8)
+  c.Finally, if you have a number of subjects for which you want to find its power, specify that number in “Sample Size”. 
+       i.If you choose this option, You would have to choose 1 of the 3 options under “MCP*”
+      ii.Make sure to leave “Power” blank.
+6.Click “Submit Parameters”
+  a.At the bottom you will see a message indicating the number of subjects needed to obtain statistical power at the percentage you         chose.
+  b.If you provided a Sample Size, NeuroPower would give you the power percentage you requested. 
+
+For additional details, refer to the following link: http://neuropowertools.org/neuropower/tutorial/
