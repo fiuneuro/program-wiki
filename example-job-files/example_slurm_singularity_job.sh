@@ -24,7 +24,7 @@ module load singularity-3
 
 DSET_DIR="/scratch/tsalo006/example-dset"
 
-singularity exec --cleanenv poldracklab_mriqc_0.15.1.sif \
+singularity run --cleanenv poldracklab_mriqc_0.15.1.sif \
     $DSET_DIR ${DSET_DIR}/derivatives/mriqc participant --n_cpus 1 --fd_thres 0.2 \
     --no-sub --verbose-reports --ica --deoblique --correct-slice-timing \
     -w /scratch/tsalo006/work
