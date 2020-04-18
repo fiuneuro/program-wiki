@@ -1,2 +1,2 @@
-# department-wiki
+# program-wiki
 Wiki for FIU cognitive neuroscience.
