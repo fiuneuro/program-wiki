@@ -16,6 +16,8 @@
 # on separate lines, such as a BIDS participants.tsv file.
 # If that file has a header row, start your array with 1, not 0.
 # Use the --array= option to identify the rows to run in an array.
+# For example --array=1-100%5 to run the first 100 lines (ignoring the header),
+# but only running 5 jobs at a given time.
 pwd; hostname; date
 set -e
 
